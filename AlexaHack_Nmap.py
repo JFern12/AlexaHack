@@ -65,7 +65,7 @@ def getNextAction(options): #takes a list of options, interacts with the interfa
 
 
  
-class AlexHack(object):
+class AlexaHack(object):
   options={}
   basicInterface=Interface()
   moreOptions=True
@@ -87,6 +87,6 @@ class AlexHack(object):
 	self.displayOptions()
   
 
-newAlexa=AlexHack()
+newAlexa=AlexaHack()
 newAlexa.hacking()
 
