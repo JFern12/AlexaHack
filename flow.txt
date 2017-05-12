@@ -1,0 +1,39 @@
++----------------------------------------------+
+Alexa:
+A.1) Alexa --> Check Execute (Intent = Stage)
+"[<time>][<type>] "scan" {<IP>} 
+"pingsweep {<IP>}"
+
+A.2) Alexa --> nmap (not ready) menu (Intent = nmap)
+"scan"|"nmap"
+
+A.3) Alexa --> top menu (Intent = Options)
+"hack"
++----------------------------------------------+
+Nmap Menu (not ready or ready):
+
+nmap --> nmap (Intent = Options)
+"options"|"what are my options"
+
+nmap --> alexa (Intent = Exit)
+"exit"
+
+nmap --> Check Execute (Intent = Stage)
+"run"|"execute" (if ready)
+"[<time>][<type>] "scan" {<IP>} 
+"pingsweep {<IP>}"
+
+nmap --> nmap (Intent = Set)
+"set {<option>} to {<value>}"
++----------------------------------------------+
+Check Execute:
+
+pre-execute --> nmap (Intent = nmap)
+"no" | "wait" | "stop"
+
+pre-execute --> pre-execute (Intent = Read State)
+"what am i doing"| "what is the command"
+
+pre-execute --> sys cmd -> nmap|Alexa (Intent = Execute)
+"yes" | "sure" | "whatever"
++----------------------------------------------+
